@@ -1,0 +1,71 @@
+Build a Python Flask REST API server called "AI News MCP Server" with the following features:
+
+1. News Fetching:
+- Use GNews API or NewsAPI (you can choose) to fetch real-time news articles.
+- Support query parameters:
+   - keyword (topic search)
+   - category (technology, sports, health, etc.)
+   - country (us, in, fr, etc.)
+   - language (en, hi, te, fr, es, etc.)
+- Always return the latest news sorted by publish date descending.
+- Default to keyword="technology" if none provided.
+
+2. AI Summarization:
+- Use Hugging Face transformers summarization pipeline (e.g., "sshleifer/distilbart-cnn-12-6").
+- Summarize the article description or content to a short, clear summary.
+- Limit input length for summarization for performance.
+- Return summarized text in the response.
+
+3. Sentiment Analysis:
+- Use Hugging Face sentiment-analysis pipeline to analyze each article's sentiment.
+- Tag each article with sentiment label: "positive", "neutral", or "negative".
+- Include a matching emoji for each sentiment:
+   - Positive: 😊
+   - Neutral: 😐
+   - Negative: 😠
+
+4. Multi-Language Support:
+- Support a query param "language" that defines the language of the summary text.
+- Use Hugging Face translation pipelines to translate the summary into requested language (support at least English, Hindi, Telugu, French, Spanish).
+- If language is English or not specified, skip translation.
+
+5. Filtering & Error Handling:
+- Return appropriate error messages if the news API or AI models fail.
+- Validate all query parameters and provide defaults.
+- If no news is found, return an empty array.
+
+6. Response Format:
+- Return a JSON array of news articles with these fields per article:
+   {
+     "title": string,
+     "content": string (original description),
+     "summary": string (AI summary in requested language),
+     "sentiment": {
+       "label": "positive"|"neutral"|"negative",
+       "emoji": "😊"|"😐"|"😠"
+     },
+     "source": string,
+     "publishedAt": ISO8601 datetime string,
+     "language": language code of summary
+   }
+
+7. No frontend or web UI needed.
+- This API will be called by Puch AI chat system.
+- Provide endpoints:
+   - GET /news  → with query params (keyword, category, country, language)
+   - GET /health → returns simple server status message.
+
+8. Code should be well-organized, clear, and handle exceptions gracefully.
+9. Use environment variables or config for API keys securely.
+
+Additional Notes:
+- Use Python 3.11+, Flask, requests, pyngrok (for local testing if needed).
+- Use Hugging Face transformers pipelines for summarization, sentiment, translation.
+- Prioritize speed and reliability.
+- Limit summarization to 512 tokens.
+- Return only top 5 latest articles.
+- Provide a minimal example how to run the server.
+
+---
+
+End of prompt.
