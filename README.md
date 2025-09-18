@@ -1,49 +1,21 @@
-# AI News MCP Server
+I have been part of CSI club in my university and participated some virtual internships
 
-A Flask REST API server that fetches real-time news and processes it with AI for summarization, sentiment analysis, and multi-language translation.
+I want to grow in a challenging environment where I can learn new skills, solve problems, and contribute to my team. In the long run, I aim to take on responsibilities that make a real impact on the organization and clients.
 
-## Features
+I should be considered because I am hardworking, eager to learn, and able to work well in a team. I pay attention to detail and am committed to delivering quality work, which fits well with KPMG’s values.
 
-- **Real-time News Fetching**: Uses both NewsAPI and GNews API for comprehensive news coverage
-- **AI Summarization**: Summarizes articles using Hugging Face transformers
-- **Sentiment Analysis**: Analyzes sentiment with emoji indicators (😊 positive, 😐 neutral, 😠 negative)
-- **Multi-language Support**: Translates summaries to English, Hindi, Telugu, French, and Spanish
-- **Latest News**: Returns top 5 latest articles sorted by publish date
+Strengths:
 
-## API Endpoints
+Good at analyzing and solving problems
 
-### GET /news
-Fetch and process news articles with AI analysis.
+Team player and easy to work with
 
-**Query Parameters:**
-- `keyword` (optional): Topic search (default: "technology")
-- `category` (optional): News category (general, business, entertainment, health, science, sports, technology)
-- `country` (optional): Country code (us, in, fr, de, gb, ca, au, jp, kr, cn, br, mx, it, es)
-- `language` (optional): Language for summary (en, hi, te, fr, es) - default: "en"
+Quick learner and adaptable
 
-**Example:**
-```bash
-curl "http://localhost:5000/news?keyword=AI&category=technology&language=en"
-```
+Clear communication
 
-**Response Format:**
-```json
-{
-  "data": [
-    {
-      "title": "Latest AI Breakthrough in Healthcare",
-      "content": "Full article content...",
-      "summary": "AI summary of the article...",
-      "sentiment": {
-        "label": "positive",
-        "emoji": "😊"
-      },
-      "source": "TechNews",
-      "publishedAt": "2025-08-10T05:00:00Z",
-      "language": "en"
-    }
-  ],
-  "formatted_response": "📰 **Latest News** 📰\n\n🔥 **1. Latest AI Breakthrough...**\n📝 AI summary...\n😊 **Sentiment:** Positive\n...",
-  "total_articles": 5,
-  "timestamp": "2025-08-10T05:26:00+00:00"
-}
+Improvement Areas:
+
+Sometimes take on too many tasks; working on better prioritizing
+
+Can be self-critical; learning to focus on progress
